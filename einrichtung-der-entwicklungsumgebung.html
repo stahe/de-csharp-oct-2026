@@ -1,0 +1,1393 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="C# 14 lernen mit .NET 10">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/de-csharp-oct-2026/einrichtung-der-entwicklungsumgebung.html">
+      
+      
+        <link rel="prev" href="einfuhrung.html">
+      
+      
+        <link rel="next" href="die-grundlagen-der-sprache-c.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2. Einrichtung der Entwicklungsumgebung - C# 14 lernen mit .NET 10</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "C# 14 lernen mit .NET 10";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-einrichtung-der-entwicklungsumgebung" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="C# 14 lernen mit .NET 10" class="md-header__button md-logo" aria-label="C# 14 lernen mit .NET 10" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            C# 14 lernen mit .NET 10
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Einrichtung der Entwicklungsumgebung
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum dunklen Modus wechseln"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Zum dunklen Modus wechseln" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum hellen Modus wechseln"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Zum hellen Modus wechseln" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/de-csharp-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="C# 14 lernen mit .NET 10" class="md-nav__button md-logo" aria-label="C# 14 lernen mit .NET 10" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    C# 14 lernen mit .NET 10
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/de-csharp-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Willkommen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="einfuhrung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Einführung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Einrichtung der Entwicklungsumgebung
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="einrichtung-der-entwicklungsumgebung.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Einrichtung der Entwicklungsumgebung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-net-10-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. .NET 10 SDK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. .NET 10 SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1. Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-der-befehl-dotnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.2. Der Befehl dotnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-der-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Der Editor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2. Der Editor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.1. VS Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-visual-studio-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.2. Visual Studio 2026
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-ein-erstes-programm-eine-einzeldatei-anwendung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Ein erstes Programm: eine Einzeldatei-Anwendung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. Ein erstes Programm: eine Einzeldatei-Anwendung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-das-programm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.1. Das Programm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-eine-einzeldatei-anwendung-in-ein-projekt-umwandeln" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.2. Eine Einzeldatei-Anwendung in ein Projekt umwandeln
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-ein-konsolenprojekt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Ein Konsolenprojekt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. Ein Konsolenprojekt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-das-projekt-erstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4.1. Das Projekt erstellen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-kompilierung-und-ausfuhrung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4.2. Kompilierung und Ausführung
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-eine-projektmappe-mit-mehreren-projekten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Eine Projektmappe mit mehreren Projekten
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5. Eine Projektmappe mit mehreren Projekten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-die-projektmappe-erstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.1. Die Projektmappe erstellen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252-ein-projekt-mit-mehreren-main-methoden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.2. Ein Projekt mit mehreren Main-Methoden
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-beispiele-in-diesem-dokument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Beispiele in diesem Dokument
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="die-grundlagen-der-sprache-c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Die Grundlagen der Sprache C#
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="klassen-strukturen-schnittstellen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Klassen, Strukturen, Schnittstellen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="haufig-verwendete-net-klassen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Häufig verwendete .NET-Klassen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schichtenarchitekturen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Schichtenarchitekturen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="delegates-lambdas-und-ereignisse.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Delegates, Lambdas und Ereignisse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ausfuhrungs-threads.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Ausführungs-Threads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="asynchrone-programmierung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Asynchrone Programmierung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="datenbankzugriff-mit-adonet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Datenbankzugriff mit ADO.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="entity-framework-core.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Entity Framework Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="webprogrammierung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Webprogrammierung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="webservices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Webservices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="weiterfuhrendes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Weiterführendes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="anhange.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Anhänge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-einrichtung-der-entwicklungsumgebung">2. <span style="color: #2e74b5">Einrichtung der Entwicklungsumgebung</span></h1>
+<p>2008 installierten wir Visual C# 2008 Express, das das .NET-3.5-Framework, das DBMS SQL Compact Server und die MSDN-Dokumentation enthielt, und erstellten Projekte anschließend mit grafischen Assistenten. Heute besteht die Entwicklungsumgebung aus zwei voneinander unabhängigen Komponenten:</p>
+<ul>
+<li>das .NET SDK („Software Development Kit“): der Compiler, die Laufzeitplattform, die Bibliotheken und der Befehl <em>[dotnet]</em>, mit dem sich alles über die Befehlszeile erledigen lässt (ein Programm erstellen, kompilieren, ausführen, testen und veröffentlichen);</li>
+<li>ein <strong>Editor</strong> oder eine <strong>IDE</strong> (integrierte Entwicklungsumgebung): <em>[VS Code]</em> mit der Erweiterung <em>[C# Dev Kit]</em>, oder <em>[Visual Studio 2026]</em>, oder <em>[JetBrains Rider]</em>. Der Editor setzt auf dem SDK auf.</li>
+</ul>
+<p>Dieses Dokument verwendet für alle Operationen den Befehl <em>[dotnet]</em>: Er funktioniert unter Windows, Linux und macOS gleich, unabhängig vom gewählten Editor.</p>
+<h2 id="21-net-10-sdk">2.1. <span style="color: #2e74b5">.NET 10 SDK</span></h2>
+<h3 id="211-installation">2.1.1. <span style="color: #1f4d78">Installation</span></h3>
+<p>Das .NET 10 SDK kann von<a href="https://dotnet.microsoft.com/download/dotnet/10.0"><u><span style="color: #0563c1"> https://dotnet.microsoft.com/download/dotnet/10.0</span></u></a> heruntergeladen werden. Unter Windows können Sie es auch über ein Terminal (PowerShell oder Eingabeaufforderung) mit dem Paketmanager <em>[winget]</em> installieren:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>winget install Microsoft.DotNet.SDK.10
+</code></pre></div></td></tr></table></div>
+<p>Sie müssen das <strong>SDK</strong> (das alles enthält) auswählen und nicht nur die „Runtime“ (die nur das Ausführen vorkompilierter Programme erlaubt). Unter Linux ist das SDK in den Repositories der großen Distributionen verfügbar (zum Beispiel <strong><em>[sudo apt install dotnet-sdk-10.0]</em></strong> unter Ubuntu; je nach Version der Distribution müssen Sie vorher eventuell das in der Installationsdokumentation von Microsoft angegebene Repository hinzufügen).</p>
+<p>Öffnen Sie nach der Installation ein <strong>neues</strong> Terminal, um zu prüfen, ob der Befehl <em>[dotnet]</em> verfügbar ist und die Version des SDK anzeigt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>&gt; dotnet --version
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>10.0.112
+</code></pre></div></td></tr></table></div>
+<p>Der Befehl <strong><em>[dotnet --list-sdks]</em></strong> listet die installierten SDK-Versionen auf (mehrere Versionen können nebeneinander existieren):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>&gt; dotnet --list-sdks
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>10.0.112 [C:\Program Files\dotnet\sdk]
+</code></pre></div></td></tr></table></div>
+<p>Die genaue Version (hier <em>[10.0.112]</em>) hängt vom Installationsdatum ab: Microsoft veröffentlicht jeden Monat ein Hotfix-Update. Alle Versionen des SDK 10.0.x sind für dieses Dokument geeignet. Der Befehl <strong><em>[dotnet --info]</em></strong> liefert ausführlichere Informationen (Betriebssystem, Speicherort des SDK, Versionen der installierten Laufzeitplattformen).</p>
+<h3 id="212-der-befehl-dotnet">2.1.2. <span style="color: #1f4d78">Der Befehl dotnet</span></h3>
+<p>Der Befehl <em>[dotnet]</em> umfasst viele Unterbefehle. Hier sind diejenigen, die wir verwenden werden:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Befehl</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Rolle</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[dotnet run file.cs]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">kompiliert und führt eine Einzeldatei-Anwendung aus</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[dotnet new console -n Name]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">erstellt ein Konsolenprojekt im Ordner <i>[Name]</i> (weitere Vorlagen: <i>[classlib]</i>, <i>[mstest]</i>, [web] …)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[dotnet build]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">kompiliert das Projekt im aktuellen Ordner</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[dotnet run]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">kompiliert (falls nötig) und führt das Projekt im aktuellen Ordner aus</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[dotnet test]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">führt die Unit-Tests aus (Kapitel 6)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[dotnet new sln]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">erstellt eine Projektmappe (eine Datei, die mehrere Projekte zusammenfasst)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[dotnet sln add Project]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">fügt der Projektmappe ein Projekt hinzu</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[dotnet add package Name]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">fügt dem Projekt eine NuGet-Bibliothek hinzu (Kapitel 10 und 11)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[dotnet add reference ../Other]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">fügt einen Verweis auf ein anderes Projekt hinzu (Kapitel 6)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[dotnet publish]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">bereitet das Programm für die Bereitstellung vor</div></td></tr></table>
+
+<p>Bibliotheken, die nicht Teil der Plattform sind, werden als <strong>NuGet-Pakete</strong> verteilt, von<a href="https://www.nuget.org/"><u><span style="color: #0563c1"> https://www.nuget.org</span></u></a> heruntergeladen und auf dem Computer im Ordner <em>[%USERPROFILE%\.nuget\packages]</em> abgelegt. 2008 kopierten wir die DLL-Dateien der Bibliotheken (Spring.NET, NUnit und den MySQL-Konnektor) in einen Ordner <em>[lib]</em> innerhalb des Projekts; heute deklariert das Projekt die benötigten Pakete, und der Befehl <em>[dotnet]</em> lädt sie herunter.</p>
+<h2 id="22-der-editor">2.2. <span style="color: #2e74b5">Der Editor</span></h2>
+<h3 id="221-vs-code">2.2.1. <span style="color: #1f4d78">VS Code</span></h3>
+<p><a href="https://code.visualstudio.com/"><u><span style="color: #0563c1">VS Code</span></u></a> ist ein kostenloser, plattformübergreifender Editor. Um in C# zu programmieren, fügen Sie die Erweiterung <strong>C# Dev Kit</strong> von Microsoft hinzu (Menü „Extensions“ öffnen und nach „C# Dev Kit“ suchen), die auch die Erweiterung <strong>C#</strong> installiert. Sie bietet:</p>
+<ul>
+<li>Syntaxhervorhebung, Codevervollständigung und Hilfe per Tooltip;</li>
+<li>Fehlererkennung während der Eingabe;</li>
+<li>Code-Navigation (F12: Go to Definition);</li>
+<li>einen Projektmappen-Explorer (Ansicht „Solution Explorer“);</li>
+<li>Ausführung und Debugging (F5);</li>
+<li>Ausführung von Unit-Tests (Ansicht „Testing“).</li>
+</ul>
+<p>Öffnen Sie in VS Code den <strong>Ordner</strong> mit den Programmen („File / Open Folder“), zum Beispiel den Ordner <em>[csharp-oct-2026]</em> mit den Beispielen dieses Dokuments. Im integrierten Terminal („Terminal / New Terminal“) können Sie <em>[dotnet]</em>-Befehle eingeben, ohne den Editor zu verlassen.</p>
+<h3 id="222-visual-studio-2026">2.2.2. <span style="color: #1f4d78">Visual Studio 2026</span></h3>
+<p>Unter Windows bevorzugen Sie möglicherweise <strong>Visual Studio 2026</strong>, den Nachfolger von Visual Studio 2008, das im ursprünglichen Kurs verwendet wurde. Die Edition <strong>Community</strong> ist für Privatpersonen, Bildungseinrichtungen und Open-Source-Projekte kostenlos. Installieren Sie sie von<a href="https://visualstudio.microsoft.com/"><u><span style="color: #0563c1"> https://visualstudio.microsoft.com</span></u></a> und wählen Sie dabei die Workload „.NET Desktop Development“ (und „ASP.NET and web development“ für Kapitel 13) aus. Visual Studio öffnet die <em>[.slnx]</em>-Projektmappen und <em>[.csproj]</em>-Projekte der Beispiele direkt („File / Open / Project/Solution“) und führt sie mit <em>[Ctrl-F5]</em> (ohne Debugging) oder <em>[F5]</em> (mit Debugging) aus, genau wie 2008.</p>
+<p>Eine dritte Möglichkeit ist <strong>JetBrains Rider</strong>, das für nicht kommerzielle Nutzung kostenlos ist.</p>
+<p>Im weiteren Verlauf dieses Dokuments werden die Schritte mit dem Befehl <em>[dotnet]</em> beschrieben, der unabhängig vom Editor dieselben Ergebnisse liefert.</p>
+<h2 id="23-ein-erstes-programm-eine-einzeldatei-anwendung">2.3. <span style="color: #2e74b5">Ein erstes Programm: eine Einzeldatei-Anwendung</span></h2>
+<h3 id="231-das-programm">2.3.1. <span style="color: #1f4d78">Das Programm</span></h3>
+<p>Ab .NET 10 kann ein C#-Programm aus einer einzigen <em>[.cs]</em>-Datei ohne Projektdatei bestehen. Man spricht von einer „dateibasierten App“. Erstellen wir die folgende Datei <em>[hello.cs]</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">// erstes C#-Programm: eine Anwendung in einer einzigen Datei</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"1st try with C# 14 and .NET 10"</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>und führen sie aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>&gt; dotnet run hello.cs
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>1st try with C# 14 and .NET 10
+</code></pre></div></td></tr></table></div>
+<p>Kommentare:</p>
+<ul>
+<li>Zeile 1: ein Kommentar. Alles nach <em>[//]</em> bis zum Zeilenende wird vom Compiler ignoriert;</li>
+<li>Zeile 2: die einzige Anweisung des Programms: Sie gibt eine Textzeile auf dem Bildschirm aus. Das Programm hat weder eine Klasse noch eine Methode namens <em>[Main]</em>, anders als sein Gegenstück von 2008; in Kapitel 3 werden wir sehen, dass der Compiler sie selbst erzeugt;</li>
+<li>Der Befehl <strong><em>[dotnet run hello.cs]</em></strong> kompiliert das Programm und führt es anschließend aus. Die erste Ausführung dauert einige Sekunden; spätere Ausführungen erfolgen fast sofort, solange die Datei unverändert bleibt, da das Kompilierergebnis in einem Cache gespeichert wird.</li>
+</ul>
+<p>Einzeldatei-Anwendungen eignen sich für kleine Programme, und wir werden sie für die meisten Beispiele verwenden. Einige Direktiven am Anfang der Datei erlauben es, sie ohne Projektdatei zu erstellen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="err">#</span><span class="p">:</span><span class="n">package</span><span class="w"> </span><span class="n">MySqlConnector</span><span class="err">@</span><span class="mf">2.4.0</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="err">#</span><span class="p">:</span><span class="n">property</span><span class="w"> </span><span class="n">PublishAot</span><span class="o">=</span><span class="k">false</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="err">#</span><span class="p">:</span><span class="n">sdk</span><span class="w"> </span><span class="n">Microsoft</span><span class="p">.</span><span class="n">NET</span><span class="p">.</span><span class="n">Sdk</span><span class="p">.</span><span class="n">Web</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>die Direktive <em>[#:package]</em> fügt eine NuGet-Bibliothek hinzu (Kapitel 10);</li>
+<li>die Direktive <em>[#:property]</em> legt eine Kompilierungseigenschaft fest (Kapitel 5);</li>
+<li>die Direktive <em>[#:sdk]</em> wählt ein anderes SDK aus, etwa das für Webanwendungen (Kapitel 12);</li>
+</ul>
+<p>Wenn unter Windows <em>[.cs]</em>-Dateien als UTF-8 gespeichert werden (was in VS Code der Standard ist), werden Umlaute und andere Sonderzeichen im Terminal korrekt angezeigt.</p>
+<h3 id="232-eine-einzeldatei-anwendung-in-ein-projekt-umwandeln">2.3.2. <span style="color: #1f4d78">Eine Einzeldatei-Anwendung in ein Projekt umwandeln</span></h3>
+<p>Wächst eine Einzeldatei-Anwendung (mehrere Dateien, Tests, Verweise auf andere Projekte), wird sie in ein Projekt umgewandelt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>&gt; dotnet project convert hello.cs -o hello
+</code></pre></div></td></tr></table></div>
+<p>Der Befehl erstellt einen Ordner namens <em>[hello]</em> , der eine Kopie des Programms und eine Projektdatei namens <em>[hello.csproj]</em> enthält:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>&gt; dir /s /b (list of files)
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>hello.cs
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>hello/hello.cs
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>hello/hello.csproj
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">Sdk=</span><span class="s">"Microsoft.NET.Sdk"</span><span class="nt">&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">  </span><span class="nt">&lt;PropertyGroup&gt;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="nt">&lt;OutputType&gt;</span>Exe<span class="nt">&lt;/OutputType&gt;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="nt">&lt;TargetFramework&gt;</span>net10.0<span class="nt">&lt;/TargetFramework&gt;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="nt">&lt;ImplicitUsings&gt;</span>enable<span class="nt">&lt;/ImplicitUsings&gt;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="nt">&lt;Nullable&gt;</span>enable<span class="nt">&lt;/Nullable&gt;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="nt">&lt;PublishAot&gt;</span>true<span class="nt">&lt;/PublishAot&gt;</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="nt">&lt;PackAsTool&gt;</span>true<span class="nt">&lt;/PackAsTool&gt;</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span><span class="nt">&lt;UserSecretsId&gt;</span>hello-7b9b5da29436665281cfbf4b23ebf4fed6297358227418ac7d456d2e18d162bf<span class="nt">&lt;/UserSecretsId&gt;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">  </span><span class="nt">&lt;/PropertyGroup&gt;</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Die Projektdatei übernimmt die Standardeigenschaften von Einzeldatei-Anwendungen (zum Beispiel <em>[PublishAot]</em>, das die Vorab-Kompilierung in nativen Code vorbereitet). Nicht benötigte Eigenschaften können Sie entfernen. Wir betrachten die Projekte nun genauer.</p>
+<h2 id="24-ein-konsolenprojekt">2.4. <span style="color: #2e74b5">Ein Konsolenprojekt</span></h2>
+<h3 id="241-das-projekt-erstellen">2.4.1. <span style="color: #1f4d78">Das Projekt erstellen</span></h3>
+<p>Ein <strong>Projekt</strong> ist ein Ordner, der eine Projektdatei (<em>[.csproj])</em> und Quelldateien enthält. Es wird mit dem Befehl <strong><em>[dotnet new]</em></strong> erstellt, gefolgt vom Namen einer <strong>Vorlage</strong> (hier <em>[console]</em>, eine Konsolenanwendung):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>&gt; dotnet new console -n FirstProgram
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>The template "Console App" was created successfully.
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>Processing post-creation actions...
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>Restoring csharp-oct-2026/02-installation/FirstProgram/FirstProgram.csproj:
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>  Determining projects to restore...
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>  Restored csharp-oct-2026/02-installation/FirstProgram/FirstProgram.csproj (in 127 ms).
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>Restore succeeded.
+</code></pre></div></td></tr></table></div>
+<p>Der Befehl hat einen Ordner namens <em>[FirstProgram]</em> mit zwei Dateien erstellt. Die Projektdatei <em>[FirstProgram.csproj]</em> sieht so aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">Sdk=</span><span class="s">"Microsoft.NET.Sdk"</span><span class="nt">&gt;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">  </span><span class="nt">&lt;PropertyGroup&gt;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="nt">&lt;OutputType&gt;</span>Exe<span class="nt">&lt;/OutputType&gt;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="nt">&lt;TargetFramework&gt;</span>net10.0<span class="nt">&lt;/TargetFramework&gt;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">    </span><span class="nt">&lt;ImplicitUsings&gt;</span>enable<span class="nt">&lt;/ImplicitUsings&gt;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">    </span><span class="nt">&lt;Nullable&gt;</span>enable<span class="nt">&lt;/Nullable&gt;</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">  </span><span class="nt">&lt;/PropertyGroup&gt;</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Zeile 1: Das Projekt verwendet das SDK <em>[Microsoft.NET.Sdk]</em>, das für Konsolenanwendungen und Bibliotheken;</li>
+<li>Zeile 4: Das Projekt erzeugt eine ausführbare Datei (<em>[Exe]</em>) und keine Bibliothek;</li>
+<li>Zeile 5: Die Zielplattform ist .NET 10 (<em>[net10.0]</em>);</li>
+<li>Zeile 6: Die gebräuchlichsten Namespaces (<em>[System]</em>, <em>[System.IO]</em>, [System.Linq] …) werden automatisch in alle Dateien importiert (Kapitel 3);</li>
+<li>Zeile 7: Der Compiler prüft die Verwendung von Null-Referenzen und gibt Warnungen zu möglichen Fehlern aus (Kapitel 3 und 4).</li>
+</ul>
+<p>Die Datei von 2008 beschrieb auf etwa hundert Zeilen jede Quelldatei des Projekts, die Bibliotheksverweise und die Konfigurationen Debug/Release. Die heutige Projektdatei enthält nur die Einstellungen, die von den Standardwerten abweichen: Alle <em>[.cs]</em>-Dateien im Ordner gehören zum Projekt.</p>
+<p>Wir ersetzen den Inhalt der generierten Datei <em>[Program.cs]</em> durch Folgendes:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1">// das Hauptprogramm des Projekts [FirstProgram]</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"1st try with a C# 14 / .NET 10 project"</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="242-kompilierung-und-ausfuhrung">2.4.2. <span style="color: #1f4d78">Kompilierung und Ausführung</span></h3>
+<p>Der im Projektordner eingegebene Befehl <strong><em>[dotnet build]</em></strong> kompiliert das Projekt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>&gt; dotnet build
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>  Determining projects to restore...
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>  All projects are up-to-date for restore.
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a>  FirstProgram -&gt; csharp-oct-2026/02-installation/FirstProgram/bin/Debug/net10.0/FirstProgram.dll
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>Build succeeded.
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a>    0 Warning(s)
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a>    0 Error(s)
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a>Time Elapsed 00:00:01.56
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Zeile 2: Der Befehl beginnt mit der <strong>Wiederherstellung</strong> des Projekts, d. h. dem Herunterladen der NuGet-Pakete, von denen es abhängt (hier gibt es keine);</li>
+<li>Zeile 4: Das Ergebnis der Kompilierung ist eine DLL, die Datei <em>[FirstProgram.dll]</em> im Ordner <em>[bin/Debug/net10.0]</em> des Projekts. Unter Windows ist der angezeigte Pfad ein Windows-Pfad (<em>[bin\Debug\net10.0\FirstProgram.dll]</em>).</li>
+</ul>
+<p>Der Ordner <em>[bin/Debug/net10.0]</em> enthält dann die folgenden Dateien:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>&gt; dir bin\Debug\net10.0 (list of files)
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>FirstProgram
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a>FirstProgram.deps.json
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a>FirstProgram.dll
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a>FirstProgram.pdb
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a>FirstProgram.runtimeconfig.json
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><em>[FirstProgram.dll]</em> enthält den kompilierten Code (im Zwischencode IL);</li>
+<li><em>[FirstProgram]</em> (unter Windows <em>[FirstProgram.exe]</em>) ist ein kleiner Starter, der die Plattform .NET startet und sie die DLL ausführen lässt;</li>
+<li><em>[FirstProgram.pdb]</em> enthält die vom Debugger verwendeten Informationen;</li>
+<li>die beiden <em>[.json]</em>-Dateien beschreiben die Abhängigkeiten des Programms und die zu seiner Ausführung erforderliche Version von .NET.</li>
+</ul>
+<p>Sie können den Starter direkt ausführen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>&gt; FirstProgram
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>1st try with a C# 14 / .NET 10 project
+</code></pre></div></td></tr></table></div>
+<p>Am häufigsten wird jedoch der Befehl <strong><em>[dotnet run]</em></strong> verwendet; er kompiliert das Projekt bei Bedarf und führt es anschließend aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>&gt; dotnet run
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>1st try with a C# 14 / .NET 10 project
+</code></pre></div></td></tr></table></div>
+<p>Wie 2008 gibt es zwei Build-Konfigurationen: <strong>Debug</strong> (Standard, mit Debuginformationen) und <strong>Release</strong> (optimiert, für den Produktivbetrieb), ausgewählt mit der Option <strong><em>[-c Release]</em></strong>: <strong><em>[dotnet build -c Release]</em></strong> erzeugt das Programm im Ordner <em>[bin/Release/net10.0]</em>. Der Ordner <em>[obj]</em> enthält Zwischendateien der Kompilierung. Die Ordner <em>[bin]</em> und <em>[obj]</em> können Sie bedenkenlos löschen: Sie werden bei der nächsten Kompilierung neu erstellt.</p>
+<h2 id="25-eine-projektmappe-mit-mehreren-projekten">2.5. <span style="color: #2e74b5">Eine Projektmappe mit mehreren Projekten</span></h2>
+<h3 id="251-die-projektmappe-erstellen">2.5.1. <span style="color: #1f4d78">Die Projektmappe erstellen</span></h3>
+<p>Eine <strong>Projektmappe</strong> fasst mehrere Projekte zusammen. Sie ermöglicht es, diese gemeinsam im Editor zu öffnen und gemeinsam zu kompilieren. Erstellen wir eine Projektmappe in dem Ordner, der das Projekt <em>[FirstProgram]</em> enthält:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>&gt; dotnet new sln -n 02-installation
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a>The template "Solution File" was created successfully.
+</code></pre></div></td></tr></table></div>
+<p>und fügen wir dann das Projekt hinzu:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>&gt; dotnet sln add FirstProgram
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a>Project `FirstProgram/FirstProgram.csproj` added to the solution.
+</code></pre></div></td></tr></table></div>
+<p>Fügen wir ein zweites Projekt hinzu, <em>[TwoHands]</em>, dessen Inhalt wir weiter unten betrachten:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>&gt; dotnet sln add TwoHands
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a>Project `TwoHands/TwoHands.csproj` added to the solution.
+</code></pre></div></td></tr></table></div>
+<p>Der Befehl <strong><em>[dotnet sln list]</em></strong> listet die Projekte der Projektmappe auf:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span>
+<span class="normal"><a href="#__codelineno-19-4">4</a></span>
+<span class="normal"><a href="#__codelineno-19-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>&gt; dotnet sln list
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a>Project(s)
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a>----------
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a>FirstProgram/FirstProgram.csproj
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a>TwoHands/TwoHands.csproj
+</code></pre></div></td></tr></table></div>
+<p>Die Projektmappendatei <em>[02-installation.slnx]</em> sieht so aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span>
+<span class="normal"><a href="#__codelineno-20-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="nt">&lt;Solution&gt;</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">  </span><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">Path=</span><span class="s">"TwoHands/TwoHands.csproj"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">  </span><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">Path=</span><span class="s">"FirstProgram/FirstProgram.csproj"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="nt">&lt;/Solution&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>Das ist eine sehr einfache XML-Datei. Seit .NET 10 ist dies das Standardformat für Projektmappen (<em>[.slnx]</em>). Das alte Format <em>[.sln]</em>, das in Visual Studio 2008 verwendet wurde, war deutlich umfangreicher; es findet sich noch in bestehenden Projekten, und mit dem Befehl <strong><em>[dotnet new sln --format sln]</em></strong> kann es weiterhin erstellt werden.</p>
+<p>Im Ordner der Projektmappe kompiliert der Befehl <strong><em>[dotnet build]</em></strong> alle Projekte der Projektmappe. Um ein bestimmtes Projekt auszuführen, wechseln Sie in dessen Ordner und geben <strong><em>[dotnet run]</em></strong> ein oder verwenden die Option <strong><em>[--project]</em></strong>: <strong><em>[dotnet run --project FirstProgram]</em></strong>.</p>
+<h3 id="252-ein-projekt-mit-mehreren-main-methoden">2.5.2. <span style="color: #1f4d78">Ein Projekt mit mehreren Main-Methoden</span></h3>
+<p>Der Kurs von 2008 zeigte, dass ein Projekt mehrere Klassen enthalten kann, jede mit einer statischen Methode namens <em>[Main]</em>, und dass man angeben muss, welche ausgeführt werden soll. Das ist weiterhin möglich. Das Projekt <em>[TwoHands]</em> enthält zwei Klassen. Die Klasse <em>[P1]</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span>
+<span class="normal"><a href="#__codelineno-21-5">5</a></span>
+<span class="normal"><a href="#__codelineno-21-6">6</a></span>
+<span class="normal"><a href="#__codelineno-21-7">7</a></span>
+<span class="normal"><a href="#__codelineno-21-8">8</a></span>
+<span class="normal"><a href="#__codelineno-21-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">TwoHands</span><span class="p">;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">P1</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="p">{</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Main of class P1"</span><span class="p">);</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>und die Klasse <em>[P2]</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span>
+<span class="normal"><a href="#__codelineno-22-5">5</a></span>
+<span class="normal"><a href="#__codelineno-22-6">6</a></span>
+<span class="normal"><a href="#__codelineno-22-7">7</a></span>
+<span class="normal"><a href="#__codelineno-22-8">8</a></span>
+<span class="normal"><a href="#__codelineno-22-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">TwoHands</span><span class="p">;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">P2</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="p">{</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">"Main of class P2"</span><span class="p">);</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Kompiliert man das Projekt ohne weitere Vorkehrungen, erhält man einen Fehler:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>&gt; dotnet build
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a>...\TwoHands\P1.cs(5,17): error CS0017: Program has more than one entry point defined. Compile with /main to specify the type that contains the entry point. 
+</code></pre></div></td></tr></table></div>
+<p>Der Compiler weiß nicht, welche Methode <em>[Main]</em> der Einstiegspunkt des Programms ist. Wir legen dies in der Projektdatei mit der Eigenschaft <em>[StartupObject]</em> fest:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span>
+<span class="normal"><a href="#__codelineno-24-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">Sdk=</span><span class="s">"Microsoft.NET.Sdk"</span><span class="nt">&gt;</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w">  </span><span class="nt">&lt;PropertyGroup&gt;</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w">    </span><span class="nt">&lt;OutputType&gt;</span>Exe<span class="nt">&lt;/OutputType&gt;</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="w">    </span><span class="nt">&lt;TargetFramework&gt;</span>net10.0<span class="nt">&lt;/TargetFramework&gt;</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="w">    </span><span class="nt">&lt;ImplicitUsings&gt;</span>enable<span class="nt">&lt;/ImplicitUsings&gt;</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="w">    </span><span class="nt">&lt;Nullable&gt;</span>enable<span class="nt">&lt;/Nullable&gt;</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="w">    </span><span class="cm">&lt;!-- die Klasse, deren Methode Main ausgeführt wird --&gt;</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="w">    </span><span class="nt">&lt;StartupObject&gt;</span>TwoHands.P2<span class="nt">&lt;/StartupObject&gt;</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="w">  </span><span class="nt">&lt;/PropertyGroup&gt;</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11"></a>
+<a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Zeile 9: Die ausgeführte Methode <em>[Main]</em> gehört zur Klasse <em>[TwoHands.P2]</em> (dem vollständigen Klassennamen einschließlich des Namespace).</li>
+</ul>
+<p>Ergebnisse:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>&gt; dotnet run
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a>Main of class P2
+</code></pre></div></td></tr></table></div>
+<p>Mit Top-Level-Anweisungen (Kapitel 3) stellt sich die Frage nicht mehr: Eine einzige Datei im Projekt kann sie enthalten, und diese Datei dient als Einstiegspunkt.</p>
+<h2 id="26-beispiele-in-diesem-dokument">2.6. <span style="color: #2e74b5">Beispiele in diesem Dokument</span></h2>
+<p>So führen Sie die Beispiele in diesem Dokument aus:</p>
+<ul>
+<li>Laden Sie den Ordner <em>[csharp-oct-2026]</em> herunter (Link am Anfang des Dokuments);</li>
+<li>öffnen Sie ihn in VS Code („File / Open Folder“) oder, für ein bestimmtes Kapitel, öffnen Sie die Projektmappe des Kapitels (<em>[.slnx])</em> in Visual Studio;</li>
+<li>führen Sie in einem Terminal im Ordner eines Kapitels eine Einzeldatei-Anwendung mit <strong><em>[dotnet run name.cs]</em></strong> aus, oder ein Projekt mit <strong><em>[dotnet run]</em></strong> im Projektordner.</li>
+</ul>
+<p>Die Kapitel 10 und 11 verwenden eine MySQL-Datenbank; die Installation von MySQL mit <em>[Laragon]</em> ist im Anhang beschrieben.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Dieses Tutorial, geschrieben von der KI <strong>Claude</strong> von Anthropic im Auftrag von <strong>Serge Tahé</strong>, wird der Öffentlichkeit unter den Bedingungen der Lizenz
+        <em>Creative Commons Namensnennung – Nicht kommerziell –
+        Weitergabe unter gleichen Bedingungen 3.0 Unported</em> zur Verfügung gestellt.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

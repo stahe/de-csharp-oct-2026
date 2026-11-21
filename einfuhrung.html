@@ -1,0 +1,983 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="C# 14 lernen mit .NET 10">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/de-csharp-oct-2026/einfuhrung.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="einrichtung-der-entwicklungsumgebung.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>1. Einführung - C# 14 lernen mit .NET 10</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "C# 14 lernen mit .NET 10";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-einfuhrung" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="C# 14 lernen mit .NET 10" class="md-header__button md-logo" aria-label="C# 14 lernen mit .NET 10" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            C# 14 lernen mit .NET 10
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Einführung
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum dunklen Modus wechseln"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Zum dunklen Modus wechseln" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum hellen Modus wechseln"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Zum hellen Modus wechseln" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/de-csharp-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="C# 14 lernen mit .NET 10" class="md-nav__button md-logo" aria-label="C# 14 lernen mit .NET 10" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    C# 14 lernen mit .NET 10
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/de-csharp-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Willkommen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Einführung
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="einfuhrung.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Einführung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-c-und-net-von-2002-bis-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. C# und .NET von 2002 bis 2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-inhalt-des-dokuments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Inhalt des Dokuments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-der-rote-faden-die-steuerberechnung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Der rote Faden: die Steuerberechnung
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-beispiele" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Beispiele
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-quellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Quellen
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="einrichtung-der-entwicklungsumgebung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Einrichtung der Entwicklungsumgebung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="die-grundlagen-der-sprache-c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Die Grundlagen der Sprache C#
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="klassen-strukturen-schnittstellen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Klassen, Strukturen, Schnittstellen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="haufig-verwendete-net-klassen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Häufig verwendete .NET-Klassen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schichtenarchitekturen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Schichtenarchitekturen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="delegates-lambdas-und-ereignisse.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Delegates, Lambdas und Ereignisse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ausfuhrungs-threads.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Ausführungs-Threads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="asynchrone-programmierung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Asynchrone Programmierung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="datenbankzugriff-mit-adonet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Datenbankzugriff mit ADO.NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="entity-framework-core.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Entity Framework Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="webprogrammierung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Webprogrammierung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="webservices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Webservices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="weiterfuhrendes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Weiterführendes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="anhange.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Anhänge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-einfuhrung">1. <span style="color: #2e74b5">Einführung</span></h1>
+<p>Das PDF zu diesem Dokument finden Sie <a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQCAeqWW8dHyQL5g5w05In9kAWY2AB-vNMDMd0L3TVPIXYE?e=z4LCoS"><u><span style="color: #0563c1">HIER</span></u></a>.</p>
+<p>Den Code zu diesem Dokument finden Sie <a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQAGatKpOBLhSqU9gFyktIIGAb9Bq1G-87ZY0LY_5BfPnfo?e=pzdkCB"><u><span style="color: #0563c1">HIER</span></u></a>.</p>
+<p>Dieses Dokument ist ein Produkt von Claude, der KI von Anthropic. Es ist eine Neufassung des <a href="https://stahe.github.io/de-csharp-mai-2008/"><u><span style="color: #0563c1">Kurses</span></u></a> <a href="https://stahe.github.io/de-csharp-mai-2008/"><u><span style="color: #0563c1">„Die Sprache C# lernen, Version 3.0 mit dem .NET-3.5-Framework“, verfasst</span></u></a> von Serge Tahé im Mai 2008, für C# 14 und die Plattform .NET 10. Es behält Gliederung, Beispiele und roten Faden des Kurses bei und aktualisiert Sprache, Bibliotheken und Werkzeuge:</p>
+<ul>
+<li>Der Kurs von 2008 verwendete C# 3.0 und das .NET-3.5-Framework unter Windows mit Visual C# 2008 Express. Seitdem hat C# elf Hauptversionen erlebt (von C# 4.0 im Jahr 2010 bis C# 14 im Jahr 2025), und die Plattform .NET wurde komplett neu geschrieben: Sie ist heute Open Source, plattformübergreifend (Windows, Linux, macOS) und erscheint jährlich. Dieses Dokument verwendet <strong>.NET 10</strong> (November 2025, Version mit Langzeitunterstützung) und <strong>C# 14</strong>;</li>
+<li>Das Kapitel über grafische Oberflächen mit Windows Forms wurde <strong>entfernt</strong>: Heute werden Geschäftsanwendungen meist mit Weboberflächen geschrieben. Das darauf folgende Kapitel „Benutzerereignisse“ wurde zu einem Kapitel über Delegaten, Lambda-Ausdrücke und Ereignisse ohne Formulare überarbeitet;</li>
+<li>Zwei Kapitel sind <strong>neu</strong>: <strong>asynchrone Programmierung</strong> (<em>[Task]</em>-Aufgaben und <em>[async]</em> / <em>[await]</em>, 2012 mit C# 5 eingeführt) und <strong>Entity Framework Core</strong>, das objektrelationale Mapping-Werkzeug für .NET. Das Kapitel über häufig verwendete .NET-Klassen behandelt nun <strong>LINQ</strong> (der Kurs von 2008 hatte ausdrücklich darauf hingewiesen, dass er dieses Thema nicht behandelt);</li>
+<li>Die Werkzeuge haben sich geändert: Der <em>[VS Code]</em>-Editor (oder die IDE <em>[Visual Studio 2026]</em>) und der Befehl <em>[dotnet]</em> ersetzen Visual C# 2008 Express; das Test-Framework <em>[MSTest]</em> ersetzt <em>[NUnit 2]</em>; die von <em>[Microsoft.Extensions.DependencyInjection]</em> bereitgestellte Dependency Injection ersetzt <em>[Spring.NET]</em>; das DBMS [MySQL] (bereitgestellt von <em>[Laragon]</em>) und der Konnektor <em>[MySqlConnector]</em> ersetzen SQL Server 2005 Express; die Klasse <em>[HttpClient]</em> ersetzt <em>[WebClient]</em> und <em>[WebRequest]</em>, die veraltet sind; die mit ASP.NET Core geschriebenen REST-/JSON-Webservices ersetzen die SOAP- und <em>[ASMX]</em>-Webservices;</li>
+<li>Was veraltet ist, wurde entfernt oder als solches gekennzeichnet, und jedes Kapitel stellt die zum Zeitpunkt der Erstellung neuesten Funktionen der Sprache und der Plattform vor.</li>
+</ul>
+<p>Dieses Dokument ist kein umfassender Kurs. Wie die Ausgabe von 2008 richtet es sich an Leser, die bereits Programmiererfahrung haben und die Grundlagen von C# erlernen möchten. Es arbeitet mit Beispielen: mehr als zweihundert Programme (fast dreihundert C#-Dateien), die meisten davon kurz und Zeile für Zeile kommentiert.</p>
+<h2 id="11-c-und-net-von-2002-bis-2026">1.1. <span style="color: #2e74b5">C# und .NET von 2002 bis 2026</span></h2>
+<p>C# erschien im Februar 2002 zusammen mit Microsofts Plattform .NET 1.0, mit der es eng verbunden ist. Die Plattform .NET ist eine Laufzeitumgebung ähnlich der Java Virtual Machine: Die Compiler der .NET-Sprachen (C#, F#, VB.NET) erzeugen Zwischencode (IL, „Intermediate Language“), den die virtuelle Maschine von .NET (die CLR, „Common Language Runtime“) zur Laufzeit in Maschinencode übersetzt. Alle Klassen der Plattform stehen allen .NET-Sprachen zur Verfügung.</p>
+<p>Im Kurs von 2008 hieß es, .NET laufe nur unter Windows, und das Projekt Mono erlaube eine eingeschränkte Nutzung unter Unix und Linux. Die Situation hat sich erheblich verändert:</p>
+<ul>
+<li><strong>2016: .NET Core 1.0</strong>. Microsoft hat eine neue Implementierung von .NET veröffentlicht, die quelloffen ist (MIT-Lizenz, Code auf GitHub verfügbar) und <strong>plattformübergreifend</strong>: Windows, Linux und macOS. Das alte „.NET“-Framework (.NET Framework 4.x) wird für ältere Windows-Anwendungen weiterhin unterstützt, aber nicht mehr weiterentwickelt;</li>
+<li><strong>2020: .NET 5</strong>. .NET Core heißt nur noch „.NET“: eine einzige Plattform für alle Einsatzzwecke (Konsole, Web, Desktop, Mobile, Cloud);</li>
+<li><strong>Seit 2020</strong>: Jedes Jahr im November erscheint eine neue Version von .NET. Versionen mit gerader Nummer (.NET 6, 8, 10) haben <strong>erweiterten Support</strong> (LTS, drei Jahre); Versionen mit ungerader Nummer (.NET 7, 9) haben <strong>Standard-Support</strong> (STS: achtzehn Monate, ab .NET 9 auf zwei Jahre verlängert). Jede Version von .NET bringt eine neue Version von C# mit;</li>
+<li><strong>November 2025: .NET 10 (LTS) und C# 14</strong>, die in diesem Dokument verwendet werden. .NET 10 wird bis November 2028 unterstützt.</li>
+</ul>
+<p>Der Kurs von 2008 stellte auch fest, dass C# im Jahr 2002 weitgehend eine Kopie von Java war und der Wechsel zwischen beiden Sprachen leichtfiel, dass sich die beiden Sprachen seither aber jeweils eigene Merkmale zugelegt haben. Der Abstand hat sich vergrößert: Im Laufe seiner Versionen hat C# Konzepte aus funktionalen Sprachen übernommen (Lambda-Ausdrücke, LINQ, Pattern Matching, Records, unveränderliche Typen), außerdem die asynchrone Programmierung (<em>[async]</em> / <em>[await]</em>, die inzwischen auch JavaScript, Python und Rust übernommen haben) und ein Typsystem, das Null-Referenzen zur Kompilierzeit erkennt.</p>
+<p>Die folgende Tabelle fasst die wichtigsten Neuerungen der Sprache seit C# 3.0 zusammen und nennt das Kapitel dieses Dokuments, in dem sie behandelt werden:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Version</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Jahr</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Wichtige Neuerungen</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Kapitel</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">C# 4.0</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2010</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">benannte und optionale Parameter (der Typ <i>[dynamic]</i> und die generische Varianz, die ebenfalls mit C# 4 eingeführt wurden, werden nicht behandelt)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">C# 5</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2012</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Asynchrone Methoden <i><b>[async] </b></i>/ <i><b>[await]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">9</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">C# 6</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2015</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">interpolierte Zeichenfolgen <i><b>[$&quot;...&quot;]</b></i>, <i><b>[nameof]</b></i>, Operator <i><b>[?.]</b></i>, Exception-Filter <i><b>[when]</b></i>, Ausdruckskörper-Member</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 4</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">C# 7.0–7.3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2017–2018</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Tupel und Dekonstruktion, <i><b>[out var]</b></i>, lokale Funktionen, Pattern Matching, binäre Literale und Trennzeichen <i><b>[_]</b></i>, Parameter <i><b>[in]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 4</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">C# 8</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2019</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Nullable-Referenztypen, <i><b>[switch]</b></i>-Ausdrücke, Indizes <i><b>[^1], </b></i>und Bereiche <i><b>[1..3]</b></i>, <i><b>[??=]</b></i>, <i><b>[using]</b></i>-Deklarationen, Standardschnittstellenmethoden, asynchrone Datenströme <i><b>[await foreach]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3 bis 9</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">C# 9</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2020</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Top-Level-Anweisungen, <i><b>[record]</b></i>, Eigenschaften <i><b>[init]</b></i>, <i><b>[new()] </b></i>mit Zieltyp, relationale und logische Muster</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 4</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">C# 10</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2021</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[global using]</b></i>, Namespaces im Dateibereich, <i><b>[record struct]</b></i>, natürlicher Typ von Lambdas</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 4, 7</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">C# 11</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2022</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Rohzeichenfolgen <i><b>[&quot;&quot;&quot;]</b></i>, Member <i><b>[required]</b></i>, Listenmuster, abstrakte statische Schnittstellenmember</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 4, 5, 12</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">C# 12</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2023</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">primäre Konstruktoren, Collection-Ausdrücke <i><b>[1, 2, 3]</b></i>, Aliase für beliebige Typen, Standardparameter bei Lambdas</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3–7</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">C# 13</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2024</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Collections <i><b>[params]</b></i>, Typ <i>[System.Threading.Lock]</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 8</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">C# 14</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2025</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Erweiterungsmember (<i><b>[extension]</b></i>-Blöcke), Schlüsselwort <i><b>[field]</b></i>, bedingte Zuweisung <i><b>[a?.B = x]</b></i>, benutzerdefinierte zusammengesetzte Zuweisungsoperatoren, Modifizierer für Lambda-Parameter ohne Typangabe </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">4, 7</div></td></tr></table>
+
+<p>Auf Plattformseite wurden unter anderem folgende Neuerungen eingeführt: der Befehl <em>[dotnet]</em> und Einzeldatei-Anwendungen (.NET 10), das Lösungsformat <em>[.slnx]</em>, LINQ, moderne generische Collections, <em>[System.Text.Json]</em>, zur Kompilierzeit generierte reguläre Ausdrücke, Dependency Injection, Tasks und die Parallelbibliothek, Channels <em>[Channel&lt;T&gt;]</em>, <em>[HttpClient]</em>, ASP.NET Core und Entity Framework Core.</p>
+<h2 id="12-inhalt-des-dokuments">1.2. <span style="color: #2e74b5">Inhalt des Dokuments</span></h2>
+<p>Dieses Dokument enthält die folgenden Kapitel:</p>
+<ul>
+<li><strong>Kapitel 2</strong>: Einrichtung der Entwicklungsumgebung (.NET 10 SDK, VS Code oder Visual Studio; der Befehl <em>[dotnet]</em>);</li>
+<li><strong>Kapitel 3</strong>: Grundlagen der Sprache (Typen, Operatoren, Kontrollanweisungen, Ausnahmen, Enumerationen, Parameterübergabe, Tupel);</li>
+<li><strong>Kapitel 4</strong>: Klassen, Strukturen, Schnittstellen, Vererbung, Generics, Records, Erweiterungsmember;</li>
+<li><strong>Kapitel 5</strong>: Häufig verwendete .NET-Klassen: Zeichenfolgen, Arrays, Collections, LINQ, Text- und Binärdateien, JSON, reguläre Ausdrücke;</li>
+<li><strong>Kapitel 6</strong>: Mehrschichtige Architekturen, Unit-Tests mit MSTest und Dependency Injection;</li>
+<li><strong>Kapitel 7</strong>: Delegaten, Lambda-Ausdrücke und Ereignisse;</li>
+<li><strong>Kapitel 8</strong>: Ausführungs-Threads und Synchronisation;</li>
+<li><strong>Kapitel 9</strong>: Asynchrone Programmierung;</li>
+<li><strong>Kapitel 10</strong>: Datenbankzugriff mit ADO.NET;</li>
+<li><strong>Kapitel 11</strong>: Entity Framework Core;</li>
+<li><strong>Kapitel 12</strong>: Webprogrammierung (TCP/IP, TCP-Clients und -Server, HTTP mit [HttpClient]);</li>
+<li><strong>Kapitel 13</strong>: Webservices mit ASP.NET Core;</li>
+<li><strong>Kapitel 14</strong>: Weiterführendes;</li>
+<li><strong>Anhänge</strong>: Installation von Laragon und MySQL.</li>
+</ul>
+<h2 id="13-der-rote-faden-die-steuerberechnung">1.3. <span style="color: #2e74b5">Der rote Faden: die Steuerberechnung</span></h2>
+<p>Wie 2008 wird im gesamten Dokument dasselbe Problem wieder aufgegriffen: die Berechnung der Einkommensteuer für einen Steuerpflichtigen, der nur sein Gehalt anzugeben hat. Verwendet wird die Steuertabelle des ursprünglichen Kurses (Einkommen 2003): Sie ist nicht mehr aktuell, genügt aber für unseren Zweck, nämlich dieselbe Anwendung auf mehrere verschiedene Arten zu schreiben. Sie wird in neun Versionen umgesetzt:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Version</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Kapitel</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Inhalt</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Ein einziges Programm: validierte Eingabe, Berechnung, Anzeige</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Klassen und Schnittstellen: <i>[TaxBracket], [ITax], [AbstractTax], [HardwiredTax]</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">5</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Berechnungsdaten aus einer Textdatei oder einer JSON-Datei gelesen</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">6</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Eine mehrschichtige Architektur (<i>[dao]</i>, <i>[business]</i>, <i>[ui]) </i>innerhalb eines einzigen Projekts</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">5</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">6</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Eine Bibliothek pro Schicht, Unit-Tests und Integration der Schichten per Dependency Injection</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">6</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">10</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Eine <i>[dao]</i>-Schicht, die Daten aus einer MySQL-Datenbank mit ADO.NET liest</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">7</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">11</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">eine mit Entity Framework Core geschriebene <i>[dao]</i>-Schicht</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">8</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">12</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Ein TCP-Server zur Steuerberechnung und sein Client</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">9</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">13</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">ein REST-Webservice zur Steuerberechnung, ein Konsolen-Client und ein Web-Client</div></td></tr></table>
+
+<p>Ab Version 5 <strong>verwenden</strong> die folgenden Versionen die Schichten von Version 5 weiter und ersetzen nur die Schicht, die sich geändert hat: Genau darin liegt der Sinn der in Kapitel 6 vorgestellten mehrschichtigen Architektur.</p>
+<h2 id="14-beispiele">1.4. <span style="color: #2e74b5">Beispiele</span></h2>
+<p>Der Code dieses Dokuments ist in einem einzigen Ordner namens <em>[csharp-oct-2026]</em> organisiert, mit einem Unterordner pro Kapitel:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>csharp-oct-2026/
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>├── 02-installation/       first programs, solution
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>├── 03-basics/             basics-01.cs to basics-28.cs, tax-v1.cs
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>├── 04-classes/            classes-01.cs to classes-25.cs, projects, TaxV2
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>├── 05-classes-dotnet/     strings, collections, LINQ, files, regex, TaxV3
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>├── 06-architectures/      TaxV4, TaxV5 (layers, tests, dependency injection)
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>├── 07-delegates/          delegates-01.cs to delegates-10.cs
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>├── 08-threads/            threads-01.cs to threads-24.cs
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>├── 09-async/              async-01.cs to async-23.cs
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>├── 10-adonet/             adonet-01.cs to adonet-09.cs, SQL scripts, TaxV6
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>├── 11-efcore/             EF Core projects, TaxV7
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>├── 12-internet/           internet-01.cs to internet-19.cs, TaxV8
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>└── 13-web-services/       ASP.NET Core web services and their clients (WsTax, ClientWsTax: version 9)
+</code></pre></div></td></tr></table></div>
+<p>Die kleinen Programme sind <strong>Einzeldatei-Anwendungen</strong>: eine einzige Datei mit der Endung <em>[.cs]</em>, die mit dem Befehl <strong><em>[dotnet run file.cs]</em></strong> ausgeführt wird (Kapitel 2). Programme aus mehreren Dateien sind <strong>Projekte</strong> (<em>[.csproj]</em>), die kapitelweise in einer <strong>Projektmappe</strong> (<em>[.slnx]</em>) zusammengefasst sind.</p>
+<p>Alle Programme dieses Dokuments wurden mit dem .NET 10 SDK ohne Fehler und Warnungen kompiliert und anschließend ausgeführt. Die im Dokument abgedruckten Ergebnisse stammen aus diesen Ausführungen. Die Ergebnisse von Kapitel 3 wurden mit der französischen Ländereinstellung (fr-FR) erzeugt, wie auf einem französischen Windows-Arbeitsplatz: Reelle Zahlen werden mit Dezimalkomma angezeigt, und Datumsangaben sind französisch. Die späteren Kapitel wurden mit der amerikanisch-englischen Ländereinstellung (en-US) ausgeführt: Dezimalpunkt, Komma als Tausendertrennzeichen, Datumsangaben im Format Monat/Tag/Jahr. Zwei Hinweise:</p>
+<ul>
+<li>Fehlermeldungen der Plattform .NET (Meldungen von Ausnahmen) sind auf Englisch: .NET stellt für diese Meldungen keine französischen Übersetzungen bereit;</li>
+<li>die Beispiele wurden unter Linux ausgeführt. Meist macht das keinen Unterschied: .NET ist plattformübergreifend. Die wenigen Unterschiede (Dateipfade mit / statt \, Zeilenenden) werden an den jeweiligen Stellen vermerkt.</li>
+</ul>
+<p>Die Ergebnisse von Multithreading-, asynchronen oder Netzwerkprogrammen sowie die gemessenen Ausführungszeiten können sich von Ausführung zu Ausführung unterscheiden: Die Kommentare konzentrieren sich auf das, was reproduzierbar ist.</p>
+<h2 id="15-quellen">1.5. <span style="color: #2e74b5">Quellen</span></h2>
+<p>Der Kurs von 2008 nannte die Bücher, die beim Schreiben geholfen haben: „Professional C# Programming“ (Wrox), „C# et .NET“ von Gérard Leblanc (Eyrolles) und „C# 3.0 in a Nutshell“ von Joseph und Ben Albahari (O’Reilly), „eines der besten Programmierbücher, die ich je gelesen habe“. Für die Ausgabe 2026 sind die Hauptquellen:</p>
+<ul>
+<li>die offizielle Dokumentation von Microsoft: <a href="https://learn.microsoft.com/fr-fr/dotnet/"><u><span style="color: #0563c1">https://learn.microsoft.com/en-us/dotnet/</span></u></a> (C#-Sprachhandbuch, Referenz der .NET-APIs, ASP.NET Core, Entity Framework Core);</li>
+<li>die Seite „Was ist neu“ zu jeder Version von C#:<a href="https://learn.microsoft.com/fr-fr/dotnet/csharp/whats-new/"><u><span style="color: #0563c1"> https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/</span></u></a>;</li>
+<li>die aufeinanderfolgenden Ausgaben von „C# in a Nutshell“ von Joseph Albahari (O’Reilly), die weiterhin eine ausgezeichnete Referenz sind.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Dieses Tutorial, geschrieben von der KI <strong>Claude</strong> von Anthropic im Auftrag von <strong>Serge Tahé</strong>, wird der Öffentlichkeit unter den Bedingungen der Lizenz
+        <em>Creative Commons Namensnennung – Nicht kommerziell –
+        Weitergabe unter gleichen Bedingungen 3.0 Unported</em> zur Verfügung gestellt.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
